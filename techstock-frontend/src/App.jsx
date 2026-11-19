@@ -7,8 +7,6 @@ export function App() {
     <>
       <Header/>
       <Main/>
-      
     </>
   )
 }
-

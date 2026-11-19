@@ -1,8 +1,11 @@
 import { v4 } from "uuid"
 import { db } from "../database/connection.js"
 
-export async function getAllItens() {
-    const [ itens ] = await db.query("SELECT * FROM estoque")
+export async function getAllItens(page) {
+
+    const offset = Number(page);
+
+    const [ itens ] = await db.query("SELECT * FROM estoque LIMIT 10 OFFSET ?", [offset])
 
     return itens
 }

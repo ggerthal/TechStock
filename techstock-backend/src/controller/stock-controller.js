@@ -1,7 +1,7 @@
 import { getAllItens, getItemById, postItem, deleteItemService, patchItemStatusService } from "../services/stock-services.js"
 
 export async function listAllItens(req, res) {
-    const itens = await getAllItens()
+    const itens = await getAllItens(req.query.page)
 
     return res.code(200).send(itens)
 }
